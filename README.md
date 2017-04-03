@@ -1,5 +1,10 @@
 # go-ACIVersion
-TBD
+How often do you check your ACI Domain for the software it is running? When was the last time you checked if you are running a deferred release? Do you know what the suggested or latest software releases are?
+These are some of the common questions I ask myself, then I ask, how do I go about checking the answers to these?
+
+This is where this application will help.  It is a simple command line application which, once configured will connect to all of your ACI Domains, gain the current running APIC version, then query http://www.cisco.com for the latest, suggested, deferred and all releases available.
+
+It will then do some simple comparisons between these different versions and produce some output to help you in your upgrade decisions.
 
 ## Setting up your GO environment
 Depending on your particular environment, there are a number of ways to setup and install GO.  This repo was developed on a MAC and was installed using Brew.  For instructions on installing HomeBrew, please check [here](https://brew.sh/); and then entering;
@@ -132,7 +137,7 @@ The output from running the application will look similar to the following;
 
 **It is important to understand, this is not performing an inventory of your ACI environment or determining if the version is supported on all the hardware within your ACI environment.  Therefore, some manual validation needs to be completed, before running any update.**
 
-#### The output is shown in 4 columns;
+#### The output is shown in 6 columns;
 * **Column 1 - ACI APIC** - These are the URL's or IP's that have been entered for each ACI APIC.
 * **Column 2 - Current Version** - These are the current ACI APIC versions that are running.
 * **Column 3 - Is Deferred** - This column shows whether the executing version has been listed as a deferred release by Cisco.  If true, this would be a strong recommendation for an upgrade.
